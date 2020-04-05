@@ -11,12 +11,23 @@ public class Recursion {
         }
     }
 
-    public int evenSum(int n) {
+    public int sumOfFirstSetOfEvenNumbers(int n) {
         if (n < 0) throw new IllegalArgumentException("n should be positive");
         if (n == 0) {
             return 0;
         } else {
-            return n * 2 + evenSum(n - 1);
+            return n * 2 + sumOfFirstSetOfEvenNumbers(n - 1);
+        }
+    }
+
+    public int evenSum(int n) {
+        if (n < 0) throw new IllegalArgumentException("n should be positive");
+        if (n == 0) {
+            return n;
+        } else if (n % 2 == 0) {
+            return n + evenSum(n - 1);
+        } else {
+            return evenSum(n - 1);
         }
     }
 
@@ -39,8 +50,9 @@ public class Recursion {
             return true;
         } else if (word.charAt(0) == word.charAt(word.length() - 1)) {
             return letterCheck(word.substring(1, word.length() - 1));
+        } else {
+            return false;
         }
-        return false;
     }
 
     public int digitSum(int n) {

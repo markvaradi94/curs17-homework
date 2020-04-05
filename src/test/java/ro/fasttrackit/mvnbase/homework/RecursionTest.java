@@ -49,38 +49,38 @@ class RecursionTest {
     @Test
     @DisplayName("evenSum(3) = 12")
     void evenSum3() {
-        assertThat(recursion.evenSum(3)).isEqualTo(12);
+        assertThat(recursion.sumOfFirstSetOfEvenNumbers(3)).isEqualTo(12);
     }
 
     @Test
-    @DisplayName("evenSum(0) = 0")
-    void evenSum0() {
-        assertThat(recursion.evenSum(0)).isEqualTo(0);
+    @DisplayName("firstSum(0) = 0")
+    void firstSum0() {
+        assertThat(recursion.sumOfFirstSetOfEvenNumbers(0)).isEqualTo(0);
     }
 
     @Test
-    @DisplayName("evenSum(-10) = exception")
-    void invalidEvenSum() {
-        var exception = assertThrows(IllegalArgumentException.class, () -> recursion.evenSum(-10));
+    @DisplayName("firstSum(-10) = exception")
+    void invalidFirstSum() {
+        var exception = assertThrows(IllegalArgumentException.class, () -> recursion.sumOfFirstSetOfEvenNumbers(-10));
         assertThat(exception.getMessage()).isEqualTo("n should be positive");
     }
 
     @Test
-    @DisplayName("evenSum(10) = 110")
-    void evenSum10() {
-        assertThat(recursion.evenSum(10)).isEqualTo(110);
+    @DisplayName("firstSum(10) = 110")
+    void firstSum10() {
+        assertThat(recursion.sumOfFirstSetOfEvenNumbers(10)).isEqualTo(110);
     }
 
     @Test
-    @DisplayName("evenSum(5) = 30")
-    void evenSum5() {
-        assertThat(recursion.evenSum(5)).isEqualTo(30);
+    @DisplayName("firstSum(5) = 30")
+    void firstSum5() {
+        assertThat(recursion.sumOfFirstSetOfEvenNumbers(5)).isEqualTo(30);
     }
 
     @Test
-    @DisplayName("evenSum(50) = 2550")
-    void evenSum50() {
-        assertThat(recursion.evenSum(50)).isEqualTo(2550);
+    @DisplayName("firstSum(50) = 2550")
+    void firstSum50() {
+        assertThat(recursion.sumOfFirstSetOfEvenNumbers(50)).isEqualTo(2550);
     }
 
     @Test
@@ -159,6 +159,36 @@ class RecursionTest {
     @DisplayName("digitSum(945876541) = 49")
     void digitSum4() {
         assertThat(recursion.digitSum(945876541)).isEqualTo(49);
+    }
+
+    @Test
+    @DisplayName("evenSum(0) = 0")
+    void evenSum0() {
+        assertThat(recursion.evenSum(0)).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("evenSum(5) = 6")
+    void evenSum5() {
+        assertThat(recursion.evenSum(5)).isEqualTo(6);
+    }
+
+    @Test
+    @DisplayName("evenSum(1) = 0")
+    void evenSum1() {
+        assertThat(recursion.evenSum(1)).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("evenSum(-15) = exception")
+    void invalidEvenSum() {
+        assertThrows(IllegalArgumentException.class, () -> recursion.evenSum(-15));
+    }
+
+    @Test
+    @DisplayName("evenSum(20) = 110")
+    void evenSum20() {
+        assertThat(recursion.evenSum(20)).isEqualTo(110);
     }
 
 }
